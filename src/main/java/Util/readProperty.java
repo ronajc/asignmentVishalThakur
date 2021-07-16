@@ -43,5 +43,9 @@ public class readProperty {
         return product;
     }
 
+    public String browserToUse(){
+        return prop.getProperty("browser.name");
+    }
+
 }
 

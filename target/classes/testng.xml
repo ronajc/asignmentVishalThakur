@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/vishal/IdeaProjects/asignmentvishalthakur/src">
+        <classes>
+            <class name="Tests.test001">
+            </class>
+            <class name="Tests.test002">
+            </class>
+        </classes>
+    </test>
+</suite>

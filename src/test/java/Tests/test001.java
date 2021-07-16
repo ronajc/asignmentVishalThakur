@@ -43,7 +43,7 @@ public class test001 extends Base{
 
         cart.incCount();
         Thread.sleep(3000);
-        System.out.println("The prize of the item is INR -> "+ cart.getPrice());
+        System.out.println("The prize of the item on flipkart after increasing the count by one is INR -> "+ cart.getPrice());
     }
 
 }

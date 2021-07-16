@@ -18,10 +18,20 @@ public class flipkartProductMain {
     @FindBy(xpath = "//button[@class='_2KpZ6l _2U9uOA _3v1-ww']")
     WebElement addToCartBtn;
 
+    @FindBy(xpath = "//div[@class=\"_30jeq3 _16Jk6d\"]")
+    WebElement prize;
+
     public void clickAddToCart(){
         addToCartBtn.click();
 
 //        JavascriptExecutor js = ((JavascriptExecutor)driver);
 //        js.executeScript("arguments[0].click()", addToCartBtn);
+    }
+
+    public int getPrizeFromMainPage(){
+        String s = prize.getText();
+        String ss = s.substring(1);
+        int p = Integer.valueOf(ss);
+        return p;
     }
 }
