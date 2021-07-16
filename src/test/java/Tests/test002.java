@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class test002 extends Base{
+public class test002 extends Base {
     flipkartHome home;
     flipkartProductMain productPage;
     flipkartCart cart;
@@ -52,30 +52,30 @@ public class test002 extends Base{
         flipkartPrize = cart.getPrice();
     }
 
-        @Test
-        public void findPrizeAMA() throws InterruptedException {
-            amazon = new amazonHome(driver);
-            pas = new productAfterSearch(driver);
-            ph = new productHome(driver);
-            ac = new amazonCart(driver);
+    @Test
+    public void findPrizeAMA() throws InterruptedException {
+        amazon = new amazonHome(driver);
+        pas = new productAfterSearch(driver);
+        ph = new productHome(driver);
+        ac = new amazonCart(driver);
 
-            driver.get(rp.amazonURL());
-            amazon.findItem(rp.productToSearch());
-            String main = driver.getWindowHandle();
-            JavascriptExecutor jsExecutor = ((JavascriptExecutor)driver);
-            jsExecutor.executeScript("window.scrollBy(0,600)", "");
-            util.syncWait(driver, 3000);
-            System.out.println("The prize of the item on amazon main page is INR -> "+pas.getPrize());
-            pas.clickOnItem();
+        driver.get(rp.amazonURL());
+        amazon.findItem(rp.productToSearch());
+        String main = driver.getWindowHandle();
+        JavascriptExecutor jsExecutor = ((JavascriptExecutor) driver);
+        jsExecutor.executeScript("window.scrollBy(0,600)", "");
+        util.syncWait(driver, 3000);
+        System.out.println("The prize of the item on amazon main page is INR -> " + pas.getPrize());
+        pas.clickOnItem();
 
-            switchWindow(main);
-            ph.clickAddToCart();
-            util.syncWait(driver, 3000);
-            ph.goToCart();
+        switchWindow(main);
+        ph.clickAddToCart();
+        util.syncWait(driver, 3000);
+        ph.goToCart();
 
-            System.out.println("The prize of the item on the amazon checkout page is INR ->"+ac.getPrize());
-            double d = Double.valueOf(ac.getPrize());
-            amazonPrize = (int)d;
+        System.out.println("The prize of the item on the amazon checkout page is INR ->" + ac.getPrize());
+        double d = Double.valueOf(ac.getPrize());
+        amazonPrize = (int) d;
     }
 
 }

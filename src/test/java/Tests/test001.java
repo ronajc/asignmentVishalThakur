@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class test001 extends Base{
+public class test001 extends Base {
     flipkartHome home;
     flipkartProductMain productPage;
     flipkartCart cart;
@@ -25,7 +25,7 @@ public class test001 extends Base{
         productPage = new flipkartProductMain(driver);
         productMain = new flipkartProductHomeAfterSearch(driver);
         cart = new flipkartCart(driver);
-        rp= new readProperty();
+        rp = new readProperty();
         driver.get(rp.flipkartURL());
 
         home.cancel();
@@ -43,7 +43,7 @@ public class test001 extends Base{
 
         cart.incCount();
         Thread.sleep(3000);
-        System.out.println("The prize of the item on flipkart after increasing the count by one is INR -> "+ cart.getPrice());
+        System.out.println("The prize of the item on flipkart after increasing the count by one is INR -> " + cart.getPrice());
     }
 
 }

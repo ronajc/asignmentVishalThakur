@@ -1,0 +1,10 @@
+Pages\amazonCart.class
+Pages\flipkartProductHomeAfterSearch.class
+Pages\flipkartCart.class
+Pages\flipkartProductMain.class
+Pages\productHome.class
+Util\testUtil.class
+Pages\flipkartHome.class
+Pages\amazonHome.class
+Util\readProperty.class
+Pages\productAfterSearch.class

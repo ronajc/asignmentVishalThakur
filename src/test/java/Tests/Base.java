@@ -4,6 +4,7 @@ import Util.readProperty;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.*;
@@ -20,16 +21,16 @@ public class Base {
     readProperty prop = new readProperty();
 
     @BeforeMethod
-    public void setup(){
-        if(prop.browserToUse().equals("chrome")) {
+    public void setup() {
+        if (prop.browserToUse().equals("chrome")) {
             WebDriverManager.chromedriver().setup();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless");
             driver = new ChromeDriver();
-        }
-        else if(prop.browserToUse().equals("firefox")){
+        } else if (prop.browserToUse().equals("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
-        }
-        else if(prop.browserToUse().equals("IE")){
+        } else if (prop.browserToUse().equals("IE")) {
             WebDriverManager.iedriver().setup();
             driver = new InternetExplorerDriver();
         }
@@ -40,11 +41,11 @@ public class Base {
     }
 
     @AfterMethod
-    public void teardown(){
+    public void teardown() {
         driver.quit();
     }
 
-    public void switchWindow(String main){
+    public void switchWindow(String main) {
 
         Set<String> total = driver.getWindowHandles();
         Iterator<String> iterator = total.iterator();
@@ -58,8 +59,18 @@ public class Base {
     }
 
     @AfterTest
-    public void finalVerdict(){
-        System.out.println(flipkartPrize>amazonPrize?"Amazon is providing cheaper prize":"Flipkart is providing cheaper prize");
+    public void finalVerdict() {
+        System.out.println("Flipkart : " + flipkartPrize + " || " + "Amazon : " + amazonPrize);
+        //System.out.println(flipkartPrize>amazonPrize?"Amazon is providing cheaper prize":"Flipkart is providing cheaper prize");
+        if (flipkartPrize > amazonPrize) {
+            System.out.println("Amazon is providing cheaper prize");
+        } else if (flipkartPrize < amazonPrize) {
+            System.out.println("Flipkart is providing cheaper prize");
+        } else if (flipkartPrize == amazonPrize) {
+            System.out.println("Both platforms are selling items at same prize");
+        } else {
+            System.out.println("No comparison available !!");
+        }
     }
 
 }
