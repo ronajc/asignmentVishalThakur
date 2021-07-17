@@ -2,7 +2,7 @@ Description -
 
 Test projects to 
 
-- Print tge prize of an item from flipkart after adding it by one.
+- Print the prize of an item from flipkart after adding it by one.
 - Compare same product from both amazon and flipkart and print The name of the website giving cheaper prize along with prizes from both sites.
 
 Dependencies-
