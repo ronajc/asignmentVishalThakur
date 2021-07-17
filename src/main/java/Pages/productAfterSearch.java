@@ -13,17 +13,12 @@ public class productAfterSearch {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//*[@id=\"search\"]/div[1]/div/div[1]/div/span[3]/div[2]/div[3]/div/span/div/div/div[2]/div[1]/div/div")
+    //@FindBy(xpath = "//*[@id=\"search\"]/div[1]/div/div[1]/div/span[3]/div[2]/div[3]/div/span/div/div/div[2]/div[1]/div/div")
+    @FindBy(xpath = "//span[contains(text(), 'Logitech M90 Wired USB Mouse, 1000 DPI Optical Tracking, Ambidextrous PC/Mac/Laptop - Black')]")
     WebElement item;
-
-    @FindBy(xpath = "//*[@id=\"search\"]/div[1]/div/div[1]/div/span[3]/div[2]/div[3]/div/span/div/div/div[2]/div[2]/div/div/div[3]/div[1]/div/div[1]/div/a/span[1]/span[2]/span[2]")
-    WebElement prize;
 
     public void clickOnItem(){
         item.click();
     }
 
-    public String getPrize(){
-        return prize.getText();
-    }
 }

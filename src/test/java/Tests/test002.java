@@ -65,10 +65,10 @@ public class test002 extends Base {
         JavascriptExecutor jsExecutor = ((JavascriptExecutor) driver);
         jsExecutor.executeScript("window.scrollBy(0,600)", "");
         util.syncWait(driver, 3000);
-        System.out.println("The prize of the item on amazon main page is INR -> " + pas.getPrize());
         pas.clickOnItem();
 
         switchWindow(main);
+        System.out.println("The prize of the item on amazon main page is INR -> " + ph.getPrize());
         ph.clickAddToCart();
         util.syncWait(driver, 3000);
         ph.goToCart();

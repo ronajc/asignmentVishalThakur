@@ -16,6 +16,9 @@ public class productHome {
     @FindBy(id = "add-to-cart-button")
     WebElement addToCartBtn;
 
+    @FindBy(id = "priceblock_ourprice")
+    WebElement Prize;
+
     @FindBy(id = "nav-cart-count-container")
     WebElement cartBtn;
 
@@ -25,5 +28,9 @@ public class productHome {
 
     public void goToCart(){
         cartBtn.click();
+    }
+
+    public String getPrize(){
+        return Prize.getText();
     }
 }
