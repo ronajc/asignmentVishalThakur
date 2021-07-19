@@ -5,6 +5,7 @@ import Pages.flipkartHome;
 import Pages.flipkartProductHomeAfterSearch;
 import Pages.flipkartProductMain;
 import Util.readProperty;
+import Util.testUtil;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,6 +19,7 @@ public class test001 extends Base {
     flipkartCart cart;
     flipkartProductHomeAfterSearch productMain;
     readProperty rp;
+    testUtil util = new testUtil(driver);
 
     @Test
     public void findPrize() throws InterruptedException {
@@ -29,20 +31,19 @@ public class test001 extends Base {
         driver.get(rp.flipkartURL());
 
         home.cancel();
-        home.findItem("Logitech M90 Wired Optical Mouse");
+        home.findItem(rp.productToSearch());
         String main = driver.getWindowHandle();
 
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        util.syncWait(driver, 3000);
         productMain.clickItem();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        util.putImplWaitSeconds(driver, 5);
         switchWindow(main);
         productPage.clickAddToCart();
         WebElement btn = cart.getBtn();
-        WebDriverWait wait = new WebDriverWait(driver, 20);
-        wait.until(ExpectedConditions.visibilityOf(btn));
+        util.putExpWait(driver, btn);
 
         cart.incCount();
-        Thread.sleep(3000);
+        util.syncWait(driver, 5000);
         System.out.println("The prize of the item on flipkart after increasing the count by one is INR -> " + cart.getPrice());
     }
 

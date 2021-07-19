@@ -7,7 +7,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.*;
+import resources.webEventListener;
 
 import java.util.Iterator;
 import java.util.Set;
@@ -19,6 +21,9 @@ public class Base {
     static int flipkartPrize;
     static int amazonPrize;
     readProperty prop = new readProperty();
+
+    public  static EventFiringWebDriver e_driver;
+    public static webEventListener eventListener;
 
     @BeforeMethod
     public void setup() {
@@ -34,6 +39,12 @@ public class Base {
             WebDriverManager.iedriver().setup();
             driver = new InternetExplorerDriver();
         }
+
+//        unComment if need clearer logs for debugging
+//        e_driver = new EventFiringWebDriver(driver);
+//        eventListener = new webEventListener();
+//        e_driver.register(eventListener);
+//        driver = e_driver;
 
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();

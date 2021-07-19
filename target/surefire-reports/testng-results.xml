@@ -2,50 +2,50 @@
 <testng-results skipped="0" failed="0" ignored="1" total="4" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="All Test Suite" duration-ms="52877" started-at="2021-07-17T15:11:46Z" finished-at="2021-07-17T15:12:38Z">
+  <suite name="All Test Suite" duration-ms="63962" started-at="2021-07-19T09:39:53Z" finished-at="2021-07-19T09:40:57Z">
     <groups>
     </groups>
-    <test name="C:/Users/vishal/IdeaProjects/asignmentvishalthakur/src" duration-ms="52877" started-at="2021-07-17T15:11:46Z" finished-at="2021-07-17T15:12:38Z">
+    <test name="C:/Users/vishal/IdeaProjects/asignmentvishalthakur/src" duration-ms="63962" started-at="2021-07-19T09:39:53Z" finished-at="2021-07-19T09:40:57Z">
       <class name="Tests.test001">
-        <test-method status="PASS" signature="setup()[pri:0, instance:Tests.test001@59e84876]" name="setup" is-config="true" duration-ms="2630" started-at="2021-07-17T15:11:46Z" finished-at="2021-07-17T15:11:48Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:Tests.test001@59e84876]" name="setup" is-config="true" duration-ms="2605" started-at="2021-07-19T09:39:53Z" finished-at="2021-07-19T09:39:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="findPrize()[pri:0, instance:Tests.test001@59e84876]" name="findPrize" duration-ms="13208" started-at="2021-07-17T15:11:48Z" finished-at="2021-07-17T15:12:01Z">
+        <test-method status="PASS" signature="findPrize()[pri:0, instance:Tests.test001@59e84876]" name="findPrize" duration-ms="17482" started-at="2021-07-19T09:39:55Z" finished-at="2021-07-19T09:40:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- findPrize -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:Tests.test001@59e84876]" name="teardown" is-config="true" duration-ms="822" started-at="2021-07-17T15:12:01Z" finished-at="2021-07-17T15:12:02Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:Tests.test001@59e84876]" name="teardown" is-config="true" duration-ms="867" started-at="2021-07-19T09:40:13Z" finished-at="2021-07-19T09:40:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="finalVerdict()[pri:0, instance:Tests.test001@59e84876]" name="finalVerdict" is-config="true" duration-ms="0" started-at="2021-07-17T15:12:38Z" finished-at="2021-07-17T15:12:38Z">
+        <test-method status="PASS" signature="finalVerdict()[pri:0, instance:Tests.test001@59e84876]" name="finalVerdict" is-config="true" duration-ms="0" started-at="2021-07-19T09:40:57Z" finished-at="2021-07-19T09:40:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalVerdict -->
       </class> <!-- Tests.test001 -->
       <class name="Tests.test002">
-        <test-method status="PASS" signature="setup()[pri:0, instance:Tests.test002@61a485d2]" name="setup" is-config="true" duration-ms="1429" started-at="2021-07-17T15:12:02Z" finished-at="2021-07-17T15:12:04Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:Tests.test002@61a485d2]" name="setup" is-config="true" duration-ms="1429" started-at="2021-07-19T09:40:14Z" finished-at="2021-07-19T09:40:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="findPrizeAMA()[pri:0, instance:Tests.test002@61a485d2]" name="findPrizeAMA" duration-ms="18570" started-at="2021-07-17T15:12:04Z" finished-at="2021-07-17T15:12:22Z">
+        <test-method status="PASS" signature="findPrizeAMA()[pri:0, instance:Tests.test002@61a485d2]" name="findPrizeAMA" duration-ms="21850" started-at="2021-07-19T09:40:15Z" finished-at="2021-07-19T09:40:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- findPrizeAMA -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:Tests.test002@61a485d2]" name="teardown" is-config="true" duration-ms="825" started-at="2021-07-17T15:12:22Z" finished-at="2021-07-17T15:12:23Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:Tests.test002@61a485d2]" name="teardown" is-config="true" duration-ms="824" started-at="2021-07-19T09:40:37Z" finished-at="2021-07-19T09:40:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:Tests.test002@61a485d2]" name="setup" is-config="true" duration-ms="1459" started-at="2021-07-17T15:12:23Z" finished-at="2021-07-17T15:12:24Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:Tests.test002@61a485d2]" name="setup" is-config="true" duration-ms="1408" started-at="2021-07-19T09:40:38Z" finished-at="2021-07-19T09:40:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="findPrizeFLIP()[pri:0, instance:Tests.test002@61a485d2]" name="findPrizeFLIP" duration-ms="13067" started-at="2021-07-17T15:12:24Z" finished-at="2021-07-17T15:12:38Z">
+        <test-method status="PASS" signature="findPrizeFLIP()[pri:0, instance:Tests.test002@61a485d2]" name="findPrizeFLIP" duration-ms="16643" started-at="2021-07-19T09:40:39Z" finished-at="2021-07-19T09:40:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- findPrizeFLIP -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:Tests.test002@61a485d2]" name="teardown" is-config="true" duration-ms="839" started-at="2021-07-17T15:12:38Z" finished-at="2021-07-17T15:12:38Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:Tests.test002@61a485d2]" name="teardown" is-config="true" duration-ms="825" started-at="2021-07-19T09:40:56Z" finished-at="2021-07-19T09:40:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

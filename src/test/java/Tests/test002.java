@@ -36,16 +36,14 @@ public class test002 extends Base {
         home.findItem(rp.productToSearch());
         String main = driver.getWindowHandle();
 
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        util.syncWait(driver, 3000);
         productMain.clickItem();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        util.putImplWaitSeconds(driver, 5);
         switchWindow(main);
         System.out.println("The prize of the item on flipkart main page is INR -> " + productPage.getPrizeFromMainPage());
         productPage.clickAddToCart();
         WebElement btn = cart.getBtn();
-        WebDriverWait wait = new WebDriverWait(driver, 20);
-        wait.until(ExpectedConditions.visibilityOf(btn));
-
+        util.putExpWait(driver, btn);
         util.syncWait(driver, 3000);
 
         System.out.println("The prize of the item on the flipkart checkout page is INR -> " + cart.getPrice());
@@ -63,7 +61,7 @@ public class test002 extends Base {
         amazon.findItem(rp.productToSearch());
         String main = driver.getWindowHandle();
         JavascriptExecutor jsExecutor = ((JavascriptExecutor) driver);
-        jsExecutor.executeScript("window.scrollBy(0,600)", "");
+        jsExecutor.executeScript("window.scrollBy(0,600)");
         util.syncWait(driver, 3000);
         pas.clickOnItem();
 
@@ -72,7 +70,7 @@ public class test002 extends Base {
         ph.clickAddToCart();
         util.syncWait(driver, 3000);
         ph.goToCart();
-
+        util.syncWait(driver, 3000);
         System.out.println("The prize of the item on the amazon checkout page is INR ->" + ac.getPrize());
         double d = Double.valueOf(ac.getPrize());
         amazonPrize = (int) d;
