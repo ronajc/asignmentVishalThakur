@@ -12,7 +12,7 @@ Dependencies-
 -TestNG
 -Selenium
 
-Testing-
-
+For Testing-
+- git clone https://github.com/ronajc/asignmentVishalThakur.git
 -Via Commandline, Open terminal and go to project root folder and run mvn clean test
 -Run tests Via TestNG plugin in Eclipse/IntelliJ, direclty run Test class or Test method as required in run or debug mode by right clicking on testNG.xml and choose run
