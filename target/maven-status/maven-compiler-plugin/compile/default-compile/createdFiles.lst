@@ -1,10 +1,6 @@
-Pages\amazonCart.class
-Pages\flipkartProductHomeAfterSearch.class
-Pages\flipkartCart.class
-Pages\flipkartProductMain.class
-Pages\productHome.class
-Util\testUtil.class
-Pages\flipkartHome.class
-Pages\amazonHome.class
+pojos\TodoPojo\TodoResponse.class
+pojos\UsersPojo\Geo.class
+pojos\UsersPojo\Address.class
 Util\readProperty.class
-Pages\productAfterSearch.class
+pojos\UsersPojo\Company.class
+pojos\UsersPojo\Users.class

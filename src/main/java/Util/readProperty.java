@@ -25,27 +25,12 @@ public class readProperty {
             e.printStackTrace();
         }
     }
-    public String flipkartURL()
+    public String baseUrl()
     {
-        String URL = prop.getProperty("flipkartBaseURL");
+        String URL = prop.getProperty("base_url");
         return URL;
     }
 
-    public String amazonURL()
-    {
-        String URL = prop.getProperty("amazonBaseURL");
-        return URL;
-    }
-
-    public String productToSearch()
-    {
-        String product = prop.getProperty("product");
-        return product;
-    }
-
-    public String browserToUse(){
-        return prop.getProperty("browser.name");
-    }
 
 }
 

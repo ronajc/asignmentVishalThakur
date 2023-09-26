@@ -1,87 +1,41 @@
 package Tests;
 
 import Util.readProperty;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
+import io.restassured.*;
+import io.restassured.response.Response;
 import org.testng.annotations.*;
-import resources.webEventListener;
-
-import java.util.Iterator;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
+import pojos.UsersPojo.Users;
+import static io.restassured.RestAssured.given;
+import java.util.*;
 
 public class Base {
-
-    public static WebDriver driver;
-    static int flipkartPrize;
-    static int amazonPrize;
     readProperty prop = new readProperty();
+    List<Integer> fanCode_users_list = new ArrayList<>();
+    final static int long_low = 5;
+    final static int long_high = 100;
+    final static int lat_low = -40;
+    final static int lat_high = 5;
 
-    public  static EventFiringWebDriver e_driver;
-    public static webEventListener eventListener;
+    @BeforeSuite
+    public void preRequisite() {
+        RestAssured.baseURI = prop.baseUrl();
 
-    @BeforeMethod
-    public void setup() {
-        if (prop.browserToUse().equals("chrome")) {
-            WebDriverManager.chromedriver().setup();
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless");
-            driver = new ChromeDriver();
-        } else if (prop.browserToUse().equals("firefox")) {
-            WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
-        } else if (prop.browserToUse().equals("IE")) {
-            WebDriverManager.iedriver().setup();
-            driver = new InternetExplorerDriver();
-        }
+        Response r = given().when().get("/users");
+        Users[] all_users = r.getBody().as(Users[].class);
 
-//        unComment if need clearer logs for debugging
-//        e_driver = new EventFiringWebDriver(driver);
-//        eventListener = new webEventListener();
-//        e_driver.register(eventListener);
-//        driver = e_driver;
-
-        driver.manage().window().maximize();
-        driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-    }
-
-    @AfterMethod
-    public void teardown() {
-        driver.quit();
-    }
-
-    public void switchWindow(String main) {
-
-        Set<String> total = driver.getWindowHandles();
-        Iterator<String> iterator = total.iterator();
-
-        while (iterator.hasNext()) {
-            String childWindow = iterator.next();
-            if (!main.equalsIgnoreCase(childWindow)) {
-                driver.switchTo().window(childWindow);
+        for(Users user: all_users){
+            int latitude = user.address.geo.lat.intValue();
+            int longitude = user.address.geo.lng.intValue();
+            if(latitude >= lat_low && latitude <=lat_high && longitude >= long_low && longitude <= long_high){
+                fanCode_users_list.add(user.id);
             }
         }
+        System.out.println("List of all users who are part of FanCode --> "+fanCode_users_list);
     }
 
-    @AfterTest
-    public void finalVerdict() {
-        System.out.println("Flipkart : " + flipkartPrize + " || " + "Amazon : " + amazonPrize);
-        //System.out.println(flipkartPrize>amazonPrize?"Amazon is providing cheaper prize":"Flipkart is providing cheaper prize");
-        if (flipkartPrize > amazonPrize) {
-            System.out.println("Amazon is providing cheaper prize");
-        } else if (flipkartPrize < amazonPrize) {
-            System.out.println("Flipkart is providing cheaper prize");
-        } else if (flipkartPrize == amazonPrize) {
-            System.out.println("Both platforms are selling items at same prize");
-        } else {
-            System.out.println("No comparison available !!");
-        }
+    @AfterSuite
+    public void teardown() {
+        System.out.println("Test Finished .....");
     }
 
 }

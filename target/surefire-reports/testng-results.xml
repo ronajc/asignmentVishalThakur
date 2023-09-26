@@ -1,55 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="4" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="All Test Suite" duration-ms="63962" started-at="2021-07-19T09:39:53Z" finished-at="2021-07-19T09:40:57Z">
+  <suite name="All Test Suite" duration-ms="1053" started-at="2023-09-26T14:42:19Z" finished-at="2023-09-26T14:42:20Z">
     <groups>
     </groups>
-    <test name="C:/Users/vishal/IdeaProjects/asignmentvishalthakur/src" duration-ms="63962" started-at="2021-07-19T09:39:53Z" finished-at="2021-07-19T09:40:57Z">
-      <class name="Tests.test001">
-        <test-method status="PASS" signature="setup()[pri:0, instance:Tests.test001@59e84876]" name="setup" is-config="true" duration-ms="2605" started-at="2021-07-19T09:39:53Z" finished-at="2021-07-19T09:39:55Z">
+    <test name="C:/Users/vishal/IdeaProjects/asignmentvishalthakur/src" duration-ms="1053" started-at="2023-09-26T14:42:19Z" finished-at="2023-09-26T14:42:20Z">
+      <class name="Tests.Todo">
+        <test-method status="PASS" signature="preRequisite()[pri:0, instance:Tests.Todo@4909b8da]" name="preRequisite" is-config="true" duration-ms="2324" started-at="2023-09-26T14:42:17Z" finished-at="2023-09-26T14:42:19Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="findPrize()[pri:0, instance:Tests.test001@59e84876]" name="findPrize" duration-ms="17482" started-at="2021-07-19T09:39:55Z" finished-at="2021-07-19T09:40:13Z">
+        </test-method> <!-- preRequisite -->
+        <test-method status="PASS" signature="get_todo()[pri:0, instance:Tests.Todo@4909b8da]" name="get_todo" is-config="true" duration-ms="1041" started-at="2023-09-26T14:42:19Z" description="Get todo API return successful API response" finished-at="2023-09-26T14:42:20Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- findPrize -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:Tests.test001@59e84876]" name="teardown" is-config="true" duration-ms="867" started-at="2021-07-19T09:40:13Z" finished-at="2021-07-19T09:40:14Z">
+        </test-method> <!-- get_todo -->
+        <test-method status="PASS" signature="check_for_empty_fc_users()[pri:0, instance:Tests.Todo@4909b8da]" name="check_for_empty_fc_users" duration-ms="1" started-at="2023-09-26T14:42:20Z" description="FanCode users should be present in the users list" finished-at="2023-09-26T14:42:20Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="finalVerdict()[pri:0, instance:Tests.test001@59e84876]" name="finalVerdict" is-config="true" duration-ms="0" started-at="2021-07-19T09:40:57Z" finished-at="2021-07-19T09:40:57Z">
+        </test-method> <!-- check_for_empty_fc_users -->
+        <test-method status="PASS" signature="check_for_empty_todo()[pri:0, instance:Tests.Todo@4909b8da]" name="check_for_empty_todo" duration-ms="0" started-at="2023-09-26T14:42:20Z" description="Todo tasks should not be empty" finished-at="2023-09-26T14:42:20Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- finalVerdict -->
-      </class> <!-- Tests.test001 -->
-      <class name="Tests.test002">
-        <test-method status="PASS" signature="setup()[pri:0, instance:Tests.test002@61a485d2]" name="setup" is-config="true" duration-ms="1429" started-at="2021-07-19T09:40:14Z" finished-at="2021-07-19T09:40:15Z">
+        </test-method> <!-- check_for_empty_todo -->
+        <test-method status="PASS" signature="check_all_fc_users_percentage_to_be_above_50()[pri:0, instance:Tests.Todo@4909b8da]" name="check_all_fc_users_percentage_to_be_above_50" duration-ms="0" started-at="2023-09-26T14:42:20Z" description="All the users of City `FanCode` should have more than half of their todos task completed" depends-on-methods="Tests.Todo.check_for_empty_fc_users" finished-at="2023-09-26T14:42:20Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="findPrizeAMA()[pri:0, instance:Tests.test002@61a485d2]" name="findPrizeAMA" duration-ms="21850" started-at="2021-07-19T09:40:15Z" finished-at="2021-07-19T09:40:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- findPrizeAMA -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:Tests.test002@61a485d2]" name="teardown" is-config="true" duration-ms="824" started-at="2021-07-19T09:40:37Z" finished-at="2021-07-19T09:40:38Z">
+        </test-method> <!-- check_all_fc_users_percentage_to_be_above_50 -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:Tests.Todo@4909b8da]" name="teardown" is-config="true" duration-ms="0" started-at="2023-09-26T14:42:21Z" finished-at="2023-09-26T14:42:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:Tests.test002@61a485d2]" name="setup" is-config="true" duration-ms="1408" started-at="2021-07-19T09:40:38Z" finished-at="2021-07-19T09:40:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="findPrizeFLIP()[pri:0, instance:Tests.test002@61a485d2]" name="findPrizeFLIP" duration-ms="16643" started-at="2021-07-19T09:40:39Z" finished-at="2021-07-19T09:40:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- findPrizeFLIP -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:Tests.test002@61a485d2]" name="teardown" is-config="true" duration-ms="825" started-at="2021-07-19T09:40:56Z" finished-at="2021-07-19T09:40:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- Tests.test002 -->
+      </class> <!-- Tests.Todo -->
     </test> <!-- C:/Users/vishal/IdeaProjects/asignmentvishalthakur/src -->
   </suite> <!-- All Test Suite -->
 </testng-results>
