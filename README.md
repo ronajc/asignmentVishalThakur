@@ -1,8 +1,9 @@
 Description -
 
-Test aims to 
+Test projects to 
 
--  check that all FC users have completed their 50 % or more tasks
+- Print the prize of an item from flipkart after adding it by one.
+- Compare same product from both amazon and flipkart and print The name of the website giving cheaper prize along with prizes from both sites.
 
 Dependencies-
 
